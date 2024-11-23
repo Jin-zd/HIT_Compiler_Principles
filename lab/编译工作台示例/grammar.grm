@@ -1,0 +1,22 @@
+[非终结符]
+S_list S D E A B
+[终结符]
+Semicolon id int return + - * = ( ) IntConst
+[文法起始符]
+P
+[生成式]
+P -> S_list;
+S_list -> S Semicolon S_list;
+S_list -> S Semicolon;
+S -> D id;
+D -> int;
+S -> id = E;
+S -> return E;
+E -> E + A;
+E -> E - A;
+E -> A;
+A -> A * B;
+A -> B;
+B -> ( E );
+B -> id;
+B -> IntConst;
